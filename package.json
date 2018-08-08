@@ -1,0 +1,29 @@
+{
+  "name": "personal_portfolio",
+  "version": "1.0.0",
+  "description": "My personal portfolio project",
+  "main": "index.js",
+  "homepage": "http://hollister009.github.io/personal_portfoilo",
+  "scripts": {
+    "deploy": "gh-pages -d build",
+    "watch:sass": "node-sass -w scss/ -o dist/css/ --recursive",
+    "devserver": "live-server",
+    "start": "npm-run-all --parallel devserver watch:sass",
+    "compile:sass": "node-sass scss/ -o build/css/ --recursive",
+    "prefix:css": "postcss --use autoprefixer -b \"last 10 versions\" build/css/*.css -o build/css/style.prefix.css",
+    "compress:css": "node-sass build/css/style.prefix.css build/css/style.min.css --output-style compressed",
+    "build:css": "npm-run-all compile:sass prefix:css compress:css"
+  },
+  "author": "Andrew Zhukevych",
+  "license": "MIT",
+  "devDependencies": {
+    "node-sass": "^4.9.2",
+    "autoprefixer": "^7.1.4",
+    "concat": "^1.0.3",
+    "postcss-cli": "^4.1.1",
+    "npm-run-all": "^4.1.1"
+  },
+  "dependencies": {
+    "gh-pages": "^1.2.0"
+  }
+}
