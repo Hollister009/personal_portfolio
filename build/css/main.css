@@ -195,12 +195,27 @@ h3 {
   margin-top: 3rem; }
   .project-tile:not(:last-child) {
     margin-right: 1.5rem; }
+  .project-tile img {
+    transition: all 0.5s ease;
+    transform: scale(1); }
   .project-tile__screen {
-    max-height: 40rem;
+    height: 28.5rem;
     border: 3px solid #f9f7f6;
     overflow: hidden;
-    position: relative;
-    transition: all 0.5s ease; }
+    position: relative; }
+    .project-tile__screen:hover {
+      opacity: .75;
+      border-color: #3ecb62;
+      transition: all 0.5s ease; }
+  .project-tile__view {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 2; }
+    .project-tile .project-tile__view:hover + img {
+      transform: scale(1.1); }
   .project-tile__hot {
     display: inline-block;
     vertical-align: middle;
