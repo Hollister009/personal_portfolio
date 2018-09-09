@@ -344,6 +344,8 @@ h3 {
 .contact__links {
   text-align: center;
   margin: 7.5rem 0; }
+  .contact__links span {
+    margin-right: 1rem; }
   .contact__links a {
     display: inline-block;
     vertical-align: middle;
